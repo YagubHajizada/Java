@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
+public class Homework1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,5 +10,6 @@ public class Main {
         double F = scanner.nextDouble();
         scanner.close();
         System.out.println(F +"°F" + " " +"=" + " " + (5*(F - 32))/9 + "°C");
+        //System.out.println(F +"°F = " + 5*(F - 32)/9 + "°C");
     }
 }
