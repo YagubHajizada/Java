@@ -13,7 +13,7 @@ public class Homework3 {
         String Yoursurname = Surname.substring(Surname.lastIndexOf(" ") + 1).toUpperCase();
 
         System.out.println("jūs :" + Name + Surname);
-        System.out.println("jūsu vārds : " + "\'" + Yourname + "\'");
-        System.out.println("jūsu uzvārds : " + "\'" + Yoursurname + "\'");
+        System.out.println("jūsu vārds : " + "'" + Yourname + "'");
+        System.out.println("jūsu uzvārds : " + "'" + Yoursurname + "'");
     }
 }
