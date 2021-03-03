@@ -9,7 +9,7 @@ public class Homework3 {
         String Name = scanner.next();
         String Surname = scanner.nextLine();
         scanner.close();
-        String Yourname = Name.substring(0, 1).toUpperCase() + Name.substring(1);
+        String Yourname = Name.substring(0, 1).toUpperCase() + Name.substring(1).toLowerCase();
         String Yoursurname = Surname.substring(Surname.lastIndexOf(" ") + 1).toUpperCase();
 
         System.out.println("jūs :" + Name + Surname);
