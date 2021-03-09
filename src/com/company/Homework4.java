@@ -8,11 +8,19 @@ public class Homework4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random ran = new Random();
-        System.out.print("ludzu ievadiet masiva izmeru robežās no 20 līdz 40: ");
-        int n = scanner.nextInt();
-        scanner.close();
+        boolean b = false;
+        int n = 0;
+        while (!b) {
+            System.out.print("ludzu ievadiet masiva izmeru robežās no 20 līdz 40: ");
+            n = scanner.nextInt();
+            if (n >= 20 && n <= 40) {
+                b = true;
+                scanner.close();
+            } else {
+                System.out.println("Jūsu numurs nav masiva izmeru robežās no 20 līdz 40:");
+            }
+        }
         int[] array = new int[n];
-
         for (int x = 0; x < array.length; x++) {
             array[x] = ran.nextInt(90) + 10;
         }
