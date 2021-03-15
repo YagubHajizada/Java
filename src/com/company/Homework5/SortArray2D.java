@@ -42,11 +42,9 @@ public class SortArray2D {
                 }
             }
             System.out.println();
-            for (int i = 0; i < array2D[0].length; i++) {
-                int t = array2D[0][i];
-                array2D[0][i] = array2D[array2D.length - 1][i];
-                array2D[array2D.length - 1][i] = t;
-            }
+            int[] temp = array2D[0];
+            array2D[0] = array2D[array2D.length - 1];
+            array2D[array2D.length - 1] = temp;
         }
         for (int i = 0; i < array2D.length; i++) {
             for (int j = 0; j < array2D[0].length; j++)
