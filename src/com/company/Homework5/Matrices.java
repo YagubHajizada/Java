@@ -25,7 +25,7 @@ public class Matrices {
 // 7.) Pārveidotais masīvs tiek izvadīts uz ekrāna tabulas veidā
         Scanner sc = new Scanner(System.in);
         Random ran = new Random();
-        int N = ran.nextInt(3) + 3;
+        int N = ran.nextInt(4) + 3;
         int[][] array2D = new int[N][N];
         System.out.println("izvēlieties aizpildīt masīva elementa vērtības :" + "Manual: 'M'" + " Random: 'R'");
         char next = sc.next().charAt(0);
@@ -59,7 +59,7 @@ public class Matrices {
         } else if (next == 'R') {
             for (int i = 0; i < array2D.length; i++) {
                 for (int j = 0; j < array2D.length; j++) {
-                    array2D[i][j] = ran.nextInt(99) + 1;
+                    array2D[i][j] = ran.nextInt(100) + 1;
                     System.out.println("arr[" + i + "][" + j + "] = " + array2D[i][j]);
                 }
                 System.out.println();
