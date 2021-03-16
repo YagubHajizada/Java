@@ -41,6 +41,11 @@ public class SortArray2D {
                     }
                 }
             }
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[0].length; j++)
+                System.out.printf("%5d", array2D[i][j]);
+            System.out.println();
+        }
             System.out.println();
             int[] temp = array2D[0];
             array2D[0] = array2D[array2D.length - 1];
