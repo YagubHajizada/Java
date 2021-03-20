@@ -16,44 +16,52 @@ public class SortArray2D {
         // 7.) Izvada izmainītā masīva vērtības tabulas veidā
         Scanner sc = new Scanner(System.in);
         Random ran = new Random();
-        System.out.println("ievadiet 2D masīva 1.dimensijas izmēru (rindu skaitu): NO 5; Lidz15 ");
-        int A = ran.nextInt(12) + 3;
-        int N = sc.nextInt();
+        int A = ran.nextInt(10) + 5;
+        int N = 0;
+        boolean b = false;
+        while (!b) {
+            System.out.println("ievadiet 2D masīva 1.dimensijas izmēru (rindu skaitu): NO 5; Lidz15 ");
+            N = sc.nextInt();
+            if (N >= 5 && N <= 15) {
+                b = true;
+                sc.close();
+            } else {
+                System.out.println("Nav Pareizi!!!");
+            }
+        }
         int[][] array2D = new int[N][A];
-        if (N >= 5 && N <= 15) {
-            sc.close();
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    array2D[i][j] = ran.nextInt(900) + 100;
-                    System.out.printf("%5d", array2D[i][j]);
-                }
-                System.out.println();
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
+                array2D[i][j] = ran.nextInt(900) + 100;
+                System.out.printf("%5d", array2D[i][j]);
             }
             System.out.println();
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    for (int k = 0; k < array2D[i].length - j - 1; k++) {
-                        if (array2D[i][k] < array2D[i][k + 1]) {
-                            int t = array2D[i][k];
-                            array2D[i][k] = array2D[i][k + 1];
-                            array2D[i][k + 1] = t;
-                        }
+        }
+        System.out.println();
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
+                for (int k = 0; k < array2D[i].length - j - 1; k++) {
+                    if (array2D[i][k] < array2D[i][k + 1]) {
+                        int t = array2D[i][k];
+                        array2D[i][k] = array2D[i][k + 1];
+                        array2D[i][k + 1] = t;
                     }
                 }
             }
-            for(int[] row : array2D){
-                for (int column : row){
-                    System.out.printf("%5d", column);
-                }
-                System.out.println();
+        }
+        for (int[] row : array2D) {
+            for (int column : row) {
+                System.out.printf("%5d", column);
             }
             System.out.println();
-            int[] temp = array2D[0];
-            array2D[0] = array2D[array2D.length - 1];
-            array2D[array2D.length - 1] = temp;
         }
-        for(int[] row : array2D){
-            for (int column : row){
+        System.out.println();
+        int[] temp = array2D[0];
+        array2D[0] = array2D[array2D.length - 1];
+        array2D[array2D.length - 1] = temp;
+
+        for (int[] row : array2D) {
+            for (int column : row) {
                 System.out.printf("%5d", column);
             }
             System.out.println();
