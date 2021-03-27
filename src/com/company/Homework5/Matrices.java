@@ -33,26 +33,8 @@ public class Matrices {
             System.out.println("Ievadiet ludzu katram masīva elementa vērtību:");
             for (int i = 0; i < array2D.length; i++) {
                 for (int j = 0; j < array2D[i].length; j++) {
+                    System.out.print("arr[" + i + "][" + j + "] = ");
                     array2D[i][j] = sc.nextInt();
-                    System.out.println("arr[" + i + "][" + j + "] = " + array2D[i][j]);
-                }
-                System.out.println();
-            }
-            sc.close();
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    System.out.printf("%5d", array2D[i][j]);
-                }
-                System.out.println();
-            }
-            System.out.println();
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    if (i == j) {
-                        System.out.printf("%5d", array2D[i][j]);
-                    } else {
-                        System.out.printf("%5d", 0);
-                    }
                 }
                 System.out.println();
             }
@@ -64,6 +46,13 @@ public class Matrices {
                 }
                 System.out.println();
             }
+        } else {
+            System.out.println("Mēģini vēlreiz! ");
+            return;
+        }
+
+        sc.close();
+
             for (int i = 0; i < array2D.length; i++) {
                 for (int j = 0; j < array2D[i].length; j++) {
                     System.out.printf("%5d", array2D[i][j]);
@@ -81,9 +70,5 @@ public class Matrices {
                 }
                 System.out.println();
             }
-        } else {
-            System.out.println("Mēģini vēlreiz! ");
-
         }
     }
-}

@@ -16,7 +16,7 @@ public class SortArray2D {
         // 7.) Izvada izmainītā masīva vērtības tabulas veidā
         Scanner sc = new Scanner(System.in);
         Random ran = new Random();
-        int A = ran.nextInt(10) + 5;
+        int A = ran.nextInt(12) + 4;
         int N = 0;
         boolean b = false;
         while (!b) {
