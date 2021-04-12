@@ -53,22 +53,22 @@ public class Matrices {
 
         sc.close();
 
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    System.out.printf("%5d", array2D[i][j]);
-                }
-                System.out.println();
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
+                System.out.printf("%5d", array2D[i][j]);
             }
             System.out.println();
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    if (i == j) {
-                        System.out.printf("%5d", array2D[i][j]);
-                    } else {
-                        System.out.printf("%5d", 0);
-                    }
+        }
+        System.out.println();
+        for (int i = 0; i < array2D.length; i++) {
+            for (int j = 0; j < array2D[i].length; j++) {
+                if (i == j) {
+                    System.out.printf("%5d", array2D[i][j]);
+                } else {
+                    System.out.printf("%5d", 0);
                 }
-                System.out.println();
             }
+            System.out.println();
         }
     }
+}
