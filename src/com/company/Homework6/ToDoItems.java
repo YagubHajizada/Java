@@ -7,6 +7,14 @@ public class ToDoItems {
     private String title;
     private List<ToDoItem> toDoItems = new ArrayList<>();
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
     public ToDoItems() {
     }
 
@@ -44,6 +52,6 @@ public class ToDoItems {
     }
 
     public void markCompletion(int toDoItemNum,boolean bool) {
-        this.toDoItems.get(toDoItemNum).markCompletion(bool);
+        this.toDoItems.get(toDoItemNum-1).markCompletion(bool);
     }
 }

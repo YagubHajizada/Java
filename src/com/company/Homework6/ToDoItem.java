@@ -1,16 +1,17 @@
 package com.company.Homework6;
 
 public class ToDoItem {
-    private int id;
     private String description;
     private PriorityEnum priority;
     private boolean completed;
 
-    public ToDoItem(int id, String description, PriorityEnum priority, boolean completed) {
-        this.id = id;
+    public ToDoItem(String description, PriorityEnum priority, boolean completed) {
         this.description = description;
         this.priority = priority;
         this.completed = completed;
+    }
+
+    public ToDoItem(String description, PriorityEnum priority) {
     }
 
     public String getDescription() {
@@ -19,10 +20,6 @@ public class ToDoItem {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public int getId() {
-        return this.id;
     }
 
     public PriorityEnum getPriority() {
@@ -43,7 +40,10 @@ public class ToDoItem {
 
     @Override
     public String toString() {
-        return String.format("Description: %s, Priority: %s, Completed: %s",
-                this.description, this.priority, this.completed);
+        if (this.completed ) {
+            return String.format("Description: %s, Priority: %s, Completed: Yes", this.description, this.priority);
+        } else {
+            return String.format("Description: %s, Priority: %s, Completed: No", this.description, this.priority);
+        }
     }
 }
