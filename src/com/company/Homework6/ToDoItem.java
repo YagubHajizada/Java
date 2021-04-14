@@ -5,13 +5,9 @@ public class ToDoItem {
     private PriorityEnum priority;
     private boolean completed;
 
-    public ToDoItem(String description, PriorityEnum priority, boolean completed) {
+    public ToDoItem(String description, PriorityEnum priority) {
         this.description = description;
         this.priority = priority;
-        this.completed = completed;
-    }
-
-    public ToDoItem(String description, PriorityEnum priority) {
     }
 
     public String getDescription() {
@@ -40,10 +36,6 @@ public class ToDoItem {
 
     @Override
     public String toString() {
-        if (this.completed ) {
-            return String.format("Description: %s, Priority: %s, Completed: Yes", this.description, this.priority);
-        } else {
-            return String.format("Description: %s, Priority: %s, Completed: No", this.description, this.priority);
+            return String.format("Description: %s, Priority: %s, Completed: %s", this.description, this.priority, this.completed ? "Yes" : "No");
         }
     }
-}
