@@ -7,6 +7,10 @@ public class ToDoItems {
     private String title;
     private List<ToDoItem> toDoItems = new ArrayList<>();
 
+    public int getSize() {
+        return this.toDoItems.size();
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }

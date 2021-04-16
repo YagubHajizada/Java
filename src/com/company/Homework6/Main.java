@@ -17,7 +17,6 @@ public class Main {
             System.out.println("3. Display all To-Do Items");
             System.out.println("4. Display uncompleted To-Do Items");
             System.out.println("5. Display completed To-Do Items");
-            int id = 1;
             String todo = scanner.nextLine();
             if (todo.toUpperCase().equals("q")) {
                 break;
@@ -25,7 +24,7 @@ public class Main {
             switch (todo) {
                 case "1":
                     while (true) {
-                        System.out.printf("Adding item #%d to list '%s'\n", id, toDoItems.getTitle());
+                            System.out.printf("Adding item #%d to list '%s'\n", toDoItems.getSize() + 1, toDoItems.getTitle());
                         System.out.print("Enter Title:");
                         String description = scanner.nextLine();
                         System.out.print("Enter priority: ");
@@ -39,7 +38,6 @@ public class Main {
                         if (action.equalsIgnoreCase("q")) {
                             break;
                         }
-                        id++;
                     }
                     break;
                 case "2":
