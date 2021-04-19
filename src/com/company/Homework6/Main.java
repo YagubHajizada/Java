@@ -24,7 +24,7 @@ public class Main {
             switch (todo) {
                 case "1":
                     while (true) {
-                            System.out.printf("Adding item #%d to list '%s'\n", toDoItems.getSize() + 1, toDoItems.getTitle());
+                        System.out.printf("Adding item #%d to list '%s'\n", toDoItems.getSize() + 1, toDoItems.getTitle());
                         System.out.print("Enter Title:");
                         String description = scanner.nextLine();
                         System.out.print("Enter priority: ");
