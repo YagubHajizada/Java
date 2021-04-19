@@ -13,11 +13,11 @@ public class CreateAccount extends Account{
         super();
     }
 
-    void insert(String surname, String name,int number,String type){// input user name, account number and type
+    void insert(String surname, String name,int number,String type){
         this.name=name;
         this.surname=surname;
         this.type=type;
-        this.number=number; // generate random number
+        this.number=number;
         this.balance=0;
     }
 
