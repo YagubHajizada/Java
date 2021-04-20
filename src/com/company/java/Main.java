@@ -1,7 +1,6 @@
-package com.company.javaProjects;
+package com.company.java;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String args[]) {
