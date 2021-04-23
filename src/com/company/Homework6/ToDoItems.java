@@ -4,58 +4,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ToDoItems {
+
     private String title;
     private List<ToDoItem> toDoItems = new ArrayList<>();
 
-    public int getSize() {
-        return this.toDoItems.size();
-    }
 
-    public void setTitle(String title) {
+    public ToDoItems(String title) {
         this.title = title;
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public ToDoItems() {
-    }
-
-    public ToDoItems(String title, List<ToDoItem> toDoItems) {
-        this.title = title;
-        this.toDoItems = toDoItems;
     }
 
     public void addItem(ToDoItem item) {
-        toDoItems.add(item);
+        this.toDoItems.add(item);
     }
 
     public void displayItems() {
         for (ToDoItem item : toDoItems) {
-            System.out.println(item.toString());
+            System.out.print(item + " Completed: No\n");
         }
     }
 
     public void displayCompletedItems() {
         for (ToDoItem item : toDoItems) {
-            if (item.isCompleted()) {
-                System.out.println(item.toString());
+            if (item.getCompleted()) {
+                System.out.print(item + "Completed: Yes\n");
             }
         }
-
     }
 
     public void displayUncompletedItems() {
         for (ToDoItem item : toDoItems) {
-            if (!item.isCompleted()) {
-                System.out.println(item);
+            if (!item.getCompleted()) {
+                System.out.print(item + "Completed: No\n");
             }
         }
-
     }
 
-    public void markCompletion(int toDoItemNum,boolean bool) {
-        this.toDoItems.get(toDoItemNum-1).markCompletion(bool);
+    public void markCompletion(int number, boolean isCompleted) {
+        this.toDoItems.get(number - 1).markCompletion(isCompleted);
+    }
+
+    public void removeItem(int remove) {
+        toDoItems.remove(remove - 1);
+    }
+
+    public int toDoItemsSize() {
+        return toDoItems.size();
     }
 }

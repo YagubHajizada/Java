@@ -1,6 +1,6 @@
 package com.company.Homework6;
 
-public enum PriorityEnum {
+public enum Priority {
     LOW,
     MEDIUM,
     HIGH
