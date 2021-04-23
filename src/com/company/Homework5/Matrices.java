@@ -23,49 +23,48 @@ public class Matrices {
 // Hint: Diagonāles elementus var identificēt, kur elementa abu dimensiju indeksi ir vienādi (array[0][0]...array[1][1]... utt.)
 // Info par diagonāles matricām: https://en.wikipedia.org/wiki/Diagonal_matrix
 // 7.) Pārveidotais masīvs tiek izvadīts uz ekrāna tabulas veidā
+        Random rnd = new Random();
         Scanner sc = new Scanner(System.in);
-        Random ran = new Random();
-        int N = ran.nextInt(4) + 3;
-        int[][] array2D = new int[N][N];
-        System.out.println("izvēlieties aizpildīt masīva elementa vērtības :" + "Manual: 'M'" + " Random: 'R'");
-        char next = sc.next().charAt(0);
-        if (next == 'M') {
-            System.out.println("Ievadiet ludzu katram masīva elementa vērtību:");
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D[i].length; j++) {
-                    System.out.print("arr[" + i + "][" + j + "] = ");
-                    array2D[i][j] = sc.nextInt();
+        int n = rnd.nextInt(4) + 3;
+        int[][] array = new int[n][n];
+        System.out.println("Do you wish to fill array manualy? (yes - y ; no - n):");
+        char mor = sc.next().charAt(0);
+        switch(Character.toUpperCase(mor)) {
+            case 'Y':
+                for (int i = 0; i < array.length; i++) {
+                    for (int j = 0; j < array[i].length; j++) {
+                        System.out.printf("Matrix [%d] [%d]", i, j);
+                        array[i][j] = sc.nextInt();
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-            }
-        } else if (next == 'R') {
-            for (int i = 0; i < array2D.length; i++) {
-                for (int j = 0; j < array2D.length; j++) {
-                    array2D[i][j] = ran.nextInt(100) + 1;
-                    System.out.println("arr[" + i + "][" + j + "] = " + array2D[i][j]);
+                break;
+            case 'N':
+                for (int i = 0; i < array.length; i++) {
+                    for (int j = 0; j < array[i].length; j++) {
+                        array[i][j] = rnd.nextInt(100) + 1;
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-            }
-        } else {
-            System.out.println("Mēģini vēlreiz! ");
-            return;
+                break;
+            default:
+                System.out.println("Wrong input");
+                return;
         }
-
         sc.close();
-
-        for (int i = 0; i < array2D.length; i++) {
-            for (int j = 0; j < array2D[i].length; j++) {
-                System.out.printf("%5d", array2D[i][j]);
+        for (int[] row : array){
+            for (int column : row){
+                System.out.printf("%5d", column);
             }
             System.out.println();
         }
         System.out.println();
-        for (int i = 0; i < array2D.length; i++) {
-            for (int j = 0; j < array2D[i].length; j++) {
-                if (i == j) {
-                    System.out.printf("%5d", array2D[i][j]);
-                } else {
-                    System.out.printf("%5d", 0);
+        for (int i = 0; i < array.length; i++){
+            for (int j = 0; j < array[i].length; j++){
+                if (i == j){
+                    System.out.printf("%5d", array[i][j]);
+                }else{
+                    System.out.printf("%5d",0);
                 }
             }
             System.out.println();
